@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Slider</title>
+    <link rel="stylesheet" href="./assets/stylesheet/css/slider.css" />
+  </head>
+  <body>
+    <h1>
+      Vous trouverez dans le dossier '/assets/images/slider', 4 photos. Codez un
+      slider <br />(voir slider.html)
+    </h1>
+    <img id="slide" width="400" height="300" />
+    <script>
+      const images = [
+        'assets/images/slider/ulm1.jpg',
+        'assets/images/slider/ulm2.jpg',
+        'assets/images/slider/ulm3.jpg',];
+      let slider = document.querySelector('#slide');
+      const showSlides = function (arr) {
+        for (let i = 0; i < images.length; i++) {
+          slider.src = images[i];
+          if (images[i] = images.length) {
+            return images[i];
+          }
+        }
+        setTimeout(showSlides, 2000);
+      };
+      showSlides(images);
+
+      // let i = 0;
+      // const nextImage = () => {
+      //   document.slide.src = images[i];
+      //   i = i + 1;
+      //   if (i >= images.length) {
+      //     i = 0;
+      //   }
+      //   setTimeout(nextImage, 5000);
+      // };
+      // nextImage();
+    </script>
+  </body>
+</html>

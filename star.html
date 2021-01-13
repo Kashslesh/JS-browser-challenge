@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>allo ciné star</title>
+    <link rel="stylesheet" href="./assets/stylesheet/css/star.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="star">
+      <h1>
+        ALLO CINE ! Un click sur une des étoiles permettra des la passer au
+        jaunes ainsi que toutes les étoiles précédentes <br />(voir star.html)
+      </h1>
+
+      <ul id="list-of-stars">
+        <li><i class="fas fa-star"></i></li>
+        <li><i class="fas fa-star"></i></li>
+        <li><i class="fas fa-star"></i></li>
+        <li><i class="fas fa-star"></i></li>
+        <li><i class="fas fa-star"></i></li>
+      </ul>
+    </div>
+    <div class="test"></div>
+    <script>
+      // let stars = document.querySelectorAll('#list-of-stars');
+      // let classStars = document.querySelectorAll('.fa-star');
+
+      // for (let i = 0; i < classStars.length; i++)
+      // // classStars[i].classList.toggle('star-checked');
+      // // for (let i = 0; i < classStars.length; i++)
+      // // classStars[i].classList.remove('star-unchecked');
+
+      ////Séléctionner  tous des elements 'list-of-star' dans un tableau
+      const stars = document.querySelectorAll('#list-of-stars li');
+
+      stars.forEach((star, index) => {
+        star.addEventListener('click', event => {
+          for (let i = 0; i <= index; i++) {
+            stars[index - i].classList.add('star-checked');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

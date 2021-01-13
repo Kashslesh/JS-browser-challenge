@@ -1,0 +1,14 @@
+
+html, body {
+    height: auto;
+
+}
+.banerTurnOn {
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em;
+    background-color: antiquewhite;
+    margin-top: 30%; 
+    width: 200px;
+    height: 100px;
+}

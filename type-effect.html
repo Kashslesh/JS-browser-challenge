@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Type effect</title>
+    <link rel="stylesheet" href="./assets/stylesheet/css/type-effect.css">
+  </head>
+  <body>
+    <h1 class="out"></h1>
+  <script>
+    const textMain = [
+      'Wake up Neo...\n',
+      '\n',
+      'Matrix has you\n',
+    ];
+    function typeText() {
+      let line = 0;
+      let count = 0;
+      let out = '';
+      let htmlOut = document.querySelector('.out');
+            
+      function typeLine(){
+        // cree des lines
+        let interval = setTimeout(function(){
+          out += textMain[line][count];
+          htmlOut.innerHTML = out + '|';
+          count++;
+        // verificationes
+        if (count >= textMain[line].length){
+          count = 0;
+          line++;
+          if (line == textMain.length){
+            clearTimeout(interval);
+            return true;
+          }
+        } 
+        typeLine();
+
+        },200);
+      }
+    
+      typeLine();
+
+    }
+    typeText();      
+
+  </script>
+  </body>
+</html>
